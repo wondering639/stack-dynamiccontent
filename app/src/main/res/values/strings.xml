@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DynamicContent</string>
+    <string name="long_text">some large views here</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
