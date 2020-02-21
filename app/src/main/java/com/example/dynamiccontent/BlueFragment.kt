@@ -20,6 +20,13 @@ class BlueFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_blue, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val listener = HeightLayoutListener.create(this)
+        view.viewTreeObserver.addOnGlobalLayoutListener(listener)
+    }
+
 
 
 
