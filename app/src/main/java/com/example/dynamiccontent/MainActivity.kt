@@ -3,6 +3,8 @@ package com.example.dynamiccontent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.widget.NestedScrollView
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,11 +26,19 @@ class MainActivity : AppCompatActivity() {
         insertBlueFragment()
     }
 
+    private fun adjustMinHeight(nsv: NestedScrollView, layout: ConstraintLayout) {
+        layout.minHeight = nsv.scrollY + nsv.height
+    }
+
 
     private fun insertYellowFragment() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, YellowFragment())
         transaction.commit()
+
+        val nsv = findViewById<NestedScrollView>(R.id.myScrollView)
+        val layout = findViewById<ConstraintLayout>(R.id.constraintLayout)
+        adjustMinHeight(nsv, layout)
     }
 
 

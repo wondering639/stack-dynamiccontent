@@ -10,7 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:id="@+id/constraintLayout"
+        >
 
         <TextView
             android:id="@+id/textView"
@@ -29,10 +31,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:text="show blue"
-            app:layout_constraintEnd_toStartOf="@+id/button_fragment2"
+            app:layout_constraintEnd_toStartOf="@id/button_fragment2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@id/textView" />
 
         <Button
             android:id="@+id/button_fragment2"
@@ -43,16 +45,23 @@
             android:text="show yellow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_fragment1"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toEndOf="@id/button_fragment1"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/button_fragment2">
+            app:layout_constraintTop_toBottomOf="@id/button_fragment2">
 
         </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Some text below the FrameLayout"
+            app:layout_constraintTop_toBottomOf="@id/fragment_container"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
